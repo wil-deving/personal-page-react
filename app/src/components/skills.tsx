@@ -1,4 +1,5 @@
 "use client";
+import { AbsoluteCenter, Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 interface Skill {

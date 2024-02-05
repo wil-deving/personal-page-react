@@ -1,9 +1,14 @@
 "use client";
 import React, { useState } from "react";
 
-const About = () => {
-  const [title, setTitle] = useState("About Me...");
-  const [description, setDescription] = useState("My name is Williams...");
+interface AboutProps {
+  title: String;
+  description: String;
+}
+
+const About: React.FC<AboutProps> = ({ title, description }) => {
+  //const [title, setTitle] = useState("About Me...");
+  //const [description, setDescription] = useState("My name is Williams...");
 
   return (
     <section>
