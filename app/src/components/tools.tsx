@@ -1,61 +1,83 @@
 "use client";
+import { HStack, VStack, Heading, Center } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { SiVisualstudio } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa";
+import { SiGithub } from "react-icons/si";
+import { DiMsqlServer } from "react-icons/di";
 
-interface Skill {
+interface Tool {
   name: String;
   image: String;
   type: "Frontend" | "Backend" | "Mobile" | "DB";
   knowledgeMeasure: number;
 }
 
-interface SkillItemUI {
+interface ToolItemUI {
   name: String;
   image: String;
 }
 
-const SkillItem: React.FC<SkillItemUI> = ({ name }) => {
+const ToolItem: React.FC<ToolItemUI> = ({ name, image }) => {
+  const iconSkill = () => {
+    switch (name) {
+      case "VS Code":
+        return <SiVisualstudio color="blue" size={"60px"} />;
+      case "Git":
+        return <FaGitAlt color="orange" size={"60px"} />;
+      case "Github":
+        return <SiGithub color="black" size={"60px"} />;
+      case "SQL Server":
+        return <DiMsqlServer color="gray" size={"60px"} />;
+      // Add more icons
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div>
-      <span>{name}</span>
-    </div>
+    <>
+      <Heading as="h6" size="sm">
+        {name}
+      </Heading>
+      {iconSkill()}
+    </>
   );
 };
 
 const Tools = () => {
-  const skillsMock: Skill[] = [
+  const toolsMock: Tool[] = [
     { type: "Frontend", image: "", name: "VS Code", knowledgeMeasure: 1 },
-    { type: "Backend", image: "", name: "Eclipse", knowledgeMeasure: 1 },
-    { type: "Mobile", image: "", name: "Android Studio", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "Git", knowledgeMeasure: 1 },
+    { type: "Mobile", image: "", name: "Github", knowledgeMeasure: 1 },
     { type: "DB", image: "", name: "SQL Server", knowledgeMeasure: 1 },
   ];
 
   const [title, setTitle] = useState("Tools");
   const [description, setDescription] = useState("");
-  const [skills, setSkills] = useState<Skill[]>(skillsMock);
+  const [tools, setTools] = useState<Tool[]>(toolsMock);
 
-  const skillsByTypeList = (filteredList: Skill[]) =>
-    filteredList.map((skill, index) => (
-      <SkillItem key={index} name={skill.name} image={""} />
-    ));
+  const toolsByTypeList = (filteredList: Tool[]) => {
+    return (
+      <VStack>
+        {filteredList.map((tool, index) => (
+          <HStack key={index}>
+            <ToolItem name={tool.name} image={tool.image} />
+          </HStack>
+        ))}
+      </VStack>
+    );
+  };
 
-  const skillsByType = (type: String): Skill[] =>
-    skills.filter((skill) => skill.type === type);
+  const toolsByType = (type: String): Tool[] =>
+    tools.filter((tool) => tool.type === type);
 
   return (
     <section>
       <h4>{title}</h4>
-      <h2>Frontend</h2>
-      {skillsByTypeList(skillsByType("Frontend"))}
-      <h2>Backend</h2>
-      {skillsByTypeList(skillsByType("Backend"))}
-      <h2>Mobile</h2>
-      {skillsByTypeList(skillsByType("Mobile"))}
-      <h2>DB</h2>
-      {skillsByTypeList(skillsByType("DB"))}
-      {/**
-       * Here contains...
-       * all skills that I have
-       */}
+      <Center bg="white" p="4" color="black">
+        {toolsByTypeList(tools)}
+      </Center>
     </section>
   );
 };

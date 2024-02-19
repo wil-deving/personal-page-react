@@ -17,6 +17,8 @@ import {
   TagLabel,
   TagLeftIcon,
   Text,
+  CardHeader,
+  Show,
 } from "@chakra-ui/react";
 
 import { PhoneIcon, AddIcon, WarningIcon, EmailIcon } from "@chakra-ui/icons";
@@ -63,13 +65,17 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
   tags,
 }) => {
   return (
-    <Card maxW="sm">
-      <Heading size="md">{name}</Heading>
+    <Card maxW="md">
+      <CardHeader>
+        <Heading size="md">{name}</Heading>
+      </CardHeader>
 
       <CardBody>
         <Image src={image} alt={name} borderRadius="lg" />
         <Stack mt="6" spacing="3">
-          <Text>{description}</Text>
+          <Text marginTop={3} marginBottom={3}>
+            {description}
+          </Text>
           <HStack spacing={4}>
             {tags.map((tag, index) => (
               <Tag
@@ -198,7 +204,16 @@ const Projects = () => {
 
   return (
     <section>
-      <h4>{title}</h4>
+      <Show below="sm">
+        <Heading marginLeft={2} marginBottom={2} as="h4" size="md">
+          {title}
+        </Heading>
+      </Show>
+      <Show above="md">
+        <Heading marginLeft={6} marginBottom={4} as="h3" size="lg">
+          {title}
+        </Heading>
+      </Show>
       <Center bg="white" p="4" color="white">
         {projectsByTypeList(projectsByType("Mobile"))}
       </Center>

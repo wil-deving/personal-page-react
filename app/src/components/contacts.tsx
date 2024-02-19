@@ -39,31 +39,49 @@ const Contacts: React.FC = () => {
 
   return (
     <div>
-      <h1>Contactos</h1>
+      {/** <h1>Contactos</h1> */}
+
+      {/** Mobile View */}
       <Show below="md">
         <Center bg="white" p="4" color="white">
-          <VStack>
+          <HStack>
             {contacts.map((contact, index) => (
-              <Link key={index} href={contact.url} isExternal target="_blank">
+              <Link
+                key={index}
+                href={contact.url}
+                isExternal
+                target="_blank"
+                marginLeft={2}
+                marginRight={2}
+              >
                 <Image
                   borderRadius="full"
-                  boxSize="80px"
+                  boxSize="50px"
                   src={contact.src}
                   alt={contact.name}
                 />
               </Link>
             ))}
-          </VStack>
+          </HStack>
         </Center>
       </Show>
-      <Show above="md">
+
+      {/** Desktop View */}
+      <Show above="sm">
         <Center bg="white" p="4" color="white">
           <HStack>
             {contacts.map((contact, index) => (
-              <Link key={index} href={contact.url} isExternal target="_blank">
+              <Link
+                key={index}
+                href={contact.url}
+                isExternal
+                target="_blank"
+                marginLeft={6}
+                marginRight={6}
+              >
                 <Image
                   borderRadius="full"
-                  boxSize="150px"
+                  boxSize="70px"
                   src={contact.src}
                   alt={contact.name}
                 />
