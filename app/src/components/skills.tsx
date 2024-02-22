@@ -5,7 +5,9 @@ import {
   Center,
   HStack,
   Heading,
+  Show,
   VStack,
+  Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FcAndroidOs } from "react-icons/fc";
@@ -42,9 +44,7 @@ const SkillItem: React.FC<SkillItemUI> = ({ name, image }) => {
 
   return (
     <>
-      <Heading as="h6" size="sm">
-        {name}
-      </Heading>
+      <Text fontSize="xl">{name}</Text>
       {iconSkill()}
     </>
   );
@@ -53,7 +53,13 @@ const SkillItem: React.FC<SkillItemUI> = ({ name, image }) => {
 const Skills = () => {
   const skillsMock: Skill[] = [
     { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
+    { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
+    { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
     { type: "Backend", image: "", name: "Java", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "Java", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "Java", knowledgeMeasure: 1 },
+    { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
+    { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
     { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
   ];
 
@@ -62,13 +68,27 @@ const Skills = () => {
   const [skills, setSkills] = useState<Skill[]>(skillsMock);
 
   const skillsByTypeList = (filteredList: Skill[]) => (
-    <VStack>
-      {filteredList.map((skill, index) => (
-        <HStack key={index}>
-          <SkillItem name={skill.name} image={skill.image} />
+    <>
+      <Show below="sm">
+        <VStack>
+          {filteredList.map((skill, index) => (
+            <HStack key={index} marginBottom={4}>
+              <SkillItem name={skill.name} image={skill.image} />
+            </HStack>
+          ))}
+        </VStack>
+      </Show>
+
+      <Show above="md">
+        <HStack>
+          {filteredList.map((skill, index) => (
+            <HStack key={index} marginRight={16}>
+              <SkillItem name={skill.name} image={skill.image} />
+            </HStack>
+          ))}
         </HStack>
-      ))}
-    </VStack>
+      </Show>
+    </>
   );
 
   const skillsByType = (type: String): Skill[] =>
@@ -76,19 +96,76 @@ const Skills = () => {
 
   return (
     <section>
-      <h4>{title}</h4>
-      <h2>Frontend</h2>
-      <Center bg="white" p="4" color="black">
-        {skillsByTypeList(skillsByType("Frontend"))}
-      </Center>
-      <h2>Backend</h2>
-      <Center bg="white" p="4" color="black">
-        {skillsByTypeList(skillsByType("Backend"))}
-      </Center>
-      <h2>Mobile</h2>
-      <Center bg="white" p="4" color="black">
-        {skillsByTypeList(skillsByType("Mobile"))}
-      </Center>
+      <Show below="sm">
+        <Heading marginLeft={2} marginBottom={2} as="h4" size="md">
+          {title}
+        </Heading>
+      </Show>
+      <Show above="md">
+        <Center bg="white" p="4" color="black">
+          <Heading marginLeft={6} marginBottom={4} as="h3" size="lg">
+            {title}
+          </Heading>
+        </Center>
+      </Show>
+
+      {/** Frontend Skills */}
+
+      <Show below="sm">
+        <Heading marginLeft={2} marginBottom={2} as="h5" size="sm">
+          Frontend
+        </Heading>
+      </Show>
+      <Show above="md">
+        <Center bg="white" p="4" color="black">
+          <Heading marginLeft={6} marginBottom={4} as="h4" size="md">
+            Frontend
+          </Heading>
+        </Center>
+      </Show>
+      <Box marginBottom={10}>
+        <Center bg="white" p="4" color="black">
+          {skillsByTypeList(skillsByType("Frontend"))}
+        </Center>
+      </Box>
+
+      {/** Backend Skills */}
+      <Show below="sm">
+        <Heading marginLeft={2} marginBottom={2} as="h5" size="sm">
+          Backend
+        </Heading>
+      </Show>
+      <Show above="md">
+        <Center bg="white" p="4" color="black">
+          <Heading marginLeft={6} marginBottom={4} as="h4" size="md">
+            Backend
+          </Heading>
+        </Center>
+      </Show>
+      <Box marginBottom={10}>
+        <Center bg="white" p="4" color="black">
+          {skillsByTypeList(skillsByType("Backend"))}
+        </Center>
+      </Box>
+
+      {/** Backend Skills */}
+      <Show below="sm">
+        <Heading marginLeft={2} marginBottom={2} as="h5" size="sm">
+          Mobile
+        </Heading>
+      </Show>
+      <Show above="md">
+        <Center bg="white" p="4" color="black">
+          <Heading marginLeft={6} marginBottom={4} as="h4" size="md">
+            Mobile
+          </Heading>
+        </Center>
+      </Show>
+      <Box marginBottom={10}>
+        <Center bg="white" p="4" color="black">
+          {skillsByTypeList(skillsByType("Mobile"))}
+        </Center>
+      </Box>
     </section>
   );
 };
