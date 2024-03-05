@@ -15,6 +15,10 @@ import { TbBrandKotlin } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaJava } from "react-icons/fa";
 
+interface SkillsProps {
+  title: string;
+}
+
 interface Skill {
   name: String;
   image: String;
@@ -50,7 +54,7 @@ const SkillItem: React.FC<SkillItemUI> = ({ name, image }) => {
   );
 };
 
-const Skills = () => {
+const Skills: React.FC<SkillsProps> = ({ title }) => {
   const skillsMock: Skill[] = [
     { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
     { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
@@ -63,8 +67,8 @@ const Skills = () => {
     { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
   ];
 
-  const [title, setTitle] = useState("Skills");
-  const [description, setDescription] = useState("");
+  // const [title, setTitle] = useState("Skills");
+  // const [description, setDescription] = useState("");
   const [skills, setSkills] = useState<Skill[]>(skillsMock);
 
   const skillsByTypeList = (filteredList: Skill[]) => (
@@ -82,7 +86,7 @@ const Skills = () => {
       <Show above="md">
         <HStack>
           {filteredList.map((skill, index) => (
-            <HStack key={index} marginRight={16}>
+            <HStack key={index} marginRight={8} marginLeft={8}>
               <SkillItem name={skill.name} image={skill.image} />
             </HStack>
           ))}

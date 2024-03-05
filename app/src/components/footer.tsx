@@ -6,12 +6,14 @@ interface FooterProps {
   phoneNumber: string;
   location: string;
   lastUpdateData: string;
+  email: string;
 }
 
 const Footer: React.FC<FooterProps> = ({
   phoneNumber,
   location,
   lastUpdateData,
+  email,
 }) => {
   return (
     <footer>
@@ -21,7 +23,8 @@ const Footer: React.FC<FooterProps> = ({
           <VStack>
             <Text fontSize="sm">{lastUpdateData}</Text>
             <Text fontSize="sm">{location}</Text>
-            <Text fontSize="sm">{phoneNumber}</Text>
+            {phoneNumber ? <Text fontSize="sm">{phoneNumber}</Text> : null}
+            {email ? <Text fontSize="sm">{email}</Text> : null}
           </VStack>
         </Center>
       </Show>
@@ -33,7 +36,8 @@ const Footer: React.FC<FooterProps> = ({
             <Text fontSize="lg">
               {lastUpdateData} | {location}
             </Text>
-            <Text fontSize="lg">{phoneNumber}</Text>
+            {phoneNumber ? <Text fontSize="lg">{phoneNumber}</Text> : null}
+            {email ? <Text fontSize="lg">{email}</Text> : null}
           </VStack>
         </Center>
       </Show>

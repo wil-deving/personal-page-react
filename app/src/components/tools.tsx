@@ -1,10 +1,14 @@
 "use client";
-import { HStack, VStack, Heading, Center } from "@chakra-ui/react";
+import { HStack, VStack, Heading, Center, Show, Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { SiVisualstudio } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
+
+interface ToolsProps {
+  title: string;
+}
 
 interface Tool {
   name: String;
@@ -45,7 +49,7 @@ const ToolItem: React.FC<ToolItemUI> = ({ name, image }) => {
   );
 };
 
-const Tools = () => {
+const Tools: React.FC<ToolsProps> = ({ title }) => {
   const toolsMock: Tool[] = [
     { type: "Frontend", image: "", name: "VS Code", knowledgeMeasure: 1 },
     { type: "Backend", image: "", name: "Git", knowledgeMeasure: 1 },
@@ -53,19 +57,45 @@ const Tools = () => {
     { type: "DB", image: "", name: "SQL Server", knowledgeMeasure: 1 },
   ];
 
-  const [title, setTitle] = useState("Tools");
-  const [description, setDescription] = useState("");
+  // const [title, setTitle] = useState("Tools");
+  // const [description, setDescription] = useState("");
   const [tools, setTools] = useState<Tool[]>(toolsMock);
 
   const toolsByTypeList = (filteredList: Tool[]) => {
     return (
-      <VStack>
+      <>
+        <Show below="sm">
+          <VStack>
+            {filteredList.map((tool, index) => (
+              <HStack key={index} marginBottom={4}>
+                <ToolItem name={tool.name} image={tool.image} />
+              </HStack>
+            ))}
+          </VStack>
+        </Show>
+
+        <Show above="md">
+          <HStack>
+            {filteredList.map((tool, index) => (
+              <HStack key={index} marginRight={8} marginLeft={8}>
+                <ToolItem name={tool.name} image={tool.image} />
+              </HStack>
+            ))}
+          </HStack>
+        </Show>
+
+        {/**
+   * 
+   * 
+   * <VStack>
         {filteredList.map((tool, index) => (
           <HStack key={index}>
             <ToolItem name={tool.name} image={tool.image} />
           </HStack>
         ))}
       </VStack>
+   */}
+      </>
     );
   };
 
@@ -74,10 +104,28 @@ const Tools = () => {
 
   return (
     <section>
-      <h4>{title}</h4>
-      <Center bg="white" p="4" color="black">
+      <Show below="sm">
+        <Heading marginLeft={2} marginBottom={2} as="h4" size="md">
+          {title}
+        </Heading>
+      </Show>
+      <Show above="md">
+        <Center bg="white" p="4" color="black">
+          <Heading marginLeft={6} marginBottom={4} as="h3" size="lg">
+            {title}
+          </Heading>
+        </Center>
+      </Show>
+      <Box marginBottom={10}>
+        <Center bg="white" p="4" color="black">
+          {toolsByTypeList(tools)}
+        </Center>
+      </Box>
+      {/**
+   * <Center bg="white" p="4" color="black">
         {toolsByTypeList(tools)}
       </Center>
+   */}
     </section>
   );
 };

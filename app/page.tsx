@@ -1,7 +1,26 @@
 // app/page.tsx
 "use client";
 import { Link } from "@chakra-ui/next-js";
-import { Box, Button, ButtonGroup, Hide, Show } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Hide,
+  Show,
+  Text,
+  Flex,
+  Spacer,
+  CardBody,
+  Stack,
+  Heading,
+  Image,
+  Card,
+  Divider,
+  CardFooter,
+  Wrap,
+  Center,
+  WrapItem,
+} from "@chakra-ui/react";
 import MainArticle from "./src/components/mainArticle";
 import About from "./src/components/about";
 import Projects from "./src/components/projects";
@@ -13,38 +32,36 @@ import Footer from "./src/components/footer";
 import ViewData from "./src/configurations/viewData.json";
 
 export default function Page() {
+  const { about, mainArticle, projects, skills, tools, footer } = ViewData;
+
   return (
     <main>
-      <MainArticle />
+      <MainArticle greeting={mainArticle.greeting} />
       <p>------------------------------------</p>
+
       <Contacts />
       <p>------------------------------------</p>
-      <About
-        title={ViewData.About.title}
-        description={ViewData.About.description}
-      />
+
+      <About title={about.title} description={about.description} />
       <p>------------------------------------</p>
-      <Projects />
+
+      <Projects title={projects.title} />
       <p>------------------------------------</p>
-      <Skills />
+
+      <Skills title={skills.title} />
       <p>------------------------------------</p>
+
       {/*<SoftSkills />*/}
-      <Tools />
 
+      <Tools title={tools.title} />
       <p>------------------------------------</p>
-      <Footer
-        lastUpdateData="©2024 Williams Gutierrez"
-        location="La Paz, Bolivia"
-        phoneNumber=""
-      />
 
-      {/**
- * Chakra ui components
- * <Button colorScheme="blue">Button DEV</Button>
-      <Link href="/about" color="blue.400" _hover={{ color: "blue.500" }}>
-        About
-      </Link>
- */}
+      <Footer
+        lastUpdateData={footer.lastUpdateData}
+        location={footer.location}
+        phoneNumber={footer.phone}
+        email={footer.email}
+      />
     </main>
   );
 }

@@ -15,10 +15,19 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const MainArticle = () => {
-  const [wellcomeText, setWellcomeText] = useState(
-    "Hola, soy Williams Gutierrez"
-  );
+interface MainArticleProps {
+  greeting: string;
+}
+
+const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
+  // const [wellcomeText, setWellcomeText] = useState("");
+
+  /**
+   * Here contains...
+   * personal photo
+   * greeting
+   * profile description
+   */
 
   return (
     <article>
@@ -27,7 +36,7 @@ const MainArticle = () => {
         <Center bg="#0F0F0F" p="4" color="white">
           <VStack>
             <Heading as="h3" size="lg">
-              {wellcomeText}
+              {greeting}
             </Heading>
             <Image
               borderRadius="full"
@@ -44,7 +53,7 @@ const MainArticle = () => {
         <Center bg="#0F0F0F" p="4" color="white">
           <HStack>
             <Heading as="h2" size="xl">
-              {wellcomeText}
+              {greeting}
             </Heading>
             <Image
               borderRadius="full"
@@ -55,13 +64,6 @@ const MainArticle = () => {
           </HStack>
         </Center>
       </Show>
-
-      {/**
-       * Here contains...
-       * personal photo
-       * greeting
-       * profile description
-       */}
     </article>
   );
 };

@@ -19,6 +19,8 @@ import {
   Text,
   CardHeader,
   Show,
+  WrapItem,
+  Wrap,
 } from "@chakra-ui/react";
 
 import { PhoneIcon, AddIcon, WarningIcon, EmailIcon } from "@chakra-ui/icons";
@@ -28,6 +30,10 @@ import { FaAndroid } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
 
 import React, { useState } from "react";
+
+interface ProjectsProps {
+  title: string;
+}
 
 interface Project {
   name: string;
@@ -65,49 +71,50 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
   tags,
 }) => {
   return (
-    <Card maxW="md">
-      <CardHeader>
-        <Heading size="md">{name}</Heading>
-      </CardHeader>
+    <WrapItem>
+      <Card maxW="sm">
+        <CardHeader>
+          <Heading size="md">{name}</Heading>
+        </CardHeader>
 
-      <CardBody>
-        <Image src={image} alt={name} borderRadius="lg" />
-        <Stack mt="6" spacing="3">
-          <Text marginTop={3} marginBottom={3}>
-            {description}
-          </Text>
-          <HStack spacing={4}>
-            {tags.map((tag, index) => (
-              <Tag
-                key={index}
-                size={"lg"}
-                borderRadius="full"
-                variant="solid"
-                colorScheme={tag.color}
-              >
-                {tag.name === "Kotlin" ? (
-                  <TagLeftIcon boxSize="18px" as={SiKotlin} />
-                ) : null}
-                {tag.name === "Android" ? (
-                  <TagLeftIcon boxSize="18px" as={FaAndroid} />
-                ) : null}
+        <CardBody>
+          <Image src={image} alt={name} borderRadius="lg" />
+          <Stack mt="6" spacing="3">
+            <Text marginTop={3} marginBottom={3}>
+              {description}
+            </Text>
+            <HStack spacing={4}>
+              {tags.map((tag, index) => (
+                <Tag
+                  key={index}
+                  size={"lg"}
+                  borderRadius="full"
+                  variant="solid"
+                  colorScheme={tag.color}
+                >
+                  {tag.name === "Kotlin" ? (
+                    <TagLeftIcon boxSize="18px" as={SiKotlin} />
+                  ) : null}
+                  {tag.name === "Android" ? (
+                    <TagLeftIcon boxSize="18px" as={FaAndroid} />
+                  ) : null}
 
-                <TagLabel>{tag.name}</TagLabel>
-              </Tag>
-            ))}
-          </HStack>
-        </Stack>
-      </CardBody>
-      <CardFooter>
-        <ButtonGroup variant="outline" spacing="6">
-          <Button onClick={() => openUrl(repositoryUrl)}>
-            {/** Add redirect ro repo */}
-            <DiGithubBadge />
-            Repositorio
-          </Button>
-        </ButtonGroup>
+                  <TagLabel>{tag.name}</TagLabel>
+                </Tag>
+              ))}
+            </HStack>
+          </Stack>
+        </CardBody>
+        <CardFooter>
+          <ButtonGroup variant="outline" spacing="6">
+            <Button onClick={() => openUrl(repositoryUrl)}>
+              {/** Add redirect ro repo */}
+              <DiGithubBadge />
+              Repositorio
+            </Button>
+          </ButtonGroup>
 
-        {/**
+          {/**
                * <Button
                 leftIcon={<EmailIcon />}
                 colorScheme="teal"
@@ -120,13 +127,32 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
                 Add to cart
               </Button>
  */}
-      </CardFooter>
-    </Card>
+        </CardFooter>
+      </Card>
+    </WrapItem>
   );
 };
 
-const Projects = () => {
+const Projects: React.FC<ProjectsProps> = ({ title }) => {
   const projectsMock: Project[] = [
+    {
+      type: "Mobile",
+      image: "/images/mov_app.jpeg",
+      name: "My own vocabulary",
+      description: "This is an app to learn english",
+      repositoryUrl: "www.facebook.com",
+      knowledgeMeasure: 1,
+      tags: [
+        {
+          name: "Kotlin",
+          color: "orange",
+        },
+        {
+          name: "Android",
+          color: "green",
+        },
+      ],
+    },
     {
       type: "Mobile",
       image: "/images/mov_app.jpeg",
@@ -183,8 +209,8 @@ const Projects = () => {
     },
   ];
 
-  const [title, setTitle] = useState("Projects");
-  const [description, setDescription] = useState("");
+  // const [title, setTitle] = useState("Projects");
+  // const [description, setDescription] = useState("");
   const [projects, setProjects] = useState<Project[]>(projectsMock);
 
   const projectsByTypeList = (filteredList: Project[]) =>
@@ -214,9 +240,15 @@ const Projects = () => {
           {title}
         </Heading>
       </Show>
-      <Center bg="white" p="4" color="white">
+      <Wrap justify="center">
+        {projectsByTypeList(projectsByType("Mobile"))}
+      </Wrap>
+
+      {/**
+           * <Center bg="white" p="4" color="white">
         {projectsByTypeList(projectsByType("Mobile"))}
       </Center>
+           */}
     </section>
   );
 };
