@@ -26,9 +26,9 @@ const ToolItem: React.FC<ToolItemUI> = ({ name, image }) => {
   const iconSkill = () => {
     switch (name) {
       case "VS Code":
-        return <SiVisualstudio color="blue" size={"60px"} />;
+        return <SiVisualstudio color="#0078d7" size={"60px"} />;
       case "Git":
-        return <FaGitAlt color="orange" size={"60px"} />;
+        return <FaGitAlt color="#f1502f" size={"60px"} />;
       case "Github":
         return <SiGithub color="black" size={"60px"} />;
       case "SQL Server":

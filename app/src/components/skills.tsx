@@ -1,6 +1,5 @@
 "use client";
 import {
-  AbsoluteCenter,
   Box,
   Center,
   HStack,
@@ -10,10 +9,20 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FcAndroidOs } from "react-icons/fc";
-import { TbBrandKotlin } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
+import { FaReact } from "react-icons/fa";
+import { PiAngularLogo } from "react-icons/pi";
+import { SiVuedotjs } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
+import { TbBrandKotlin } from "react-icons/tb";
+import { SiSpring } from "react-icons/si";
+import { GrServices } from "react-icons/gr";
+import { FaDatabase } from "react-icons/fa";
+import { ImAndroid } from "react-icons/im";
+import { SiJetpackcompose } from "react-icons/si";
+import { BsCloudCheckFill } from "react-icons/bs";
+import { VscGear } from "react-icons/vsc";
 
 interface SkillsProps {
   title: string;
@@ -34,12 +43,34 @@ interface SkillItemUI {
 const SkillItem: React.FC<SkillItemUI> = ({ name, image }) => {
   const iconSkill = () => {
     switch (name) {
+      case "React":
+        return <FaReact color="#4986e7" size={"60px"} />;
+      case "Angular":
+        return <PiAngularLogo color="#dd1b16" size={"60px"} />;
+      case "Vue":
+        return <SiVuedotjs color="#42b883" size={"60px"} />;
+      case "Typescript":
+        return <SiTypescript color="#007acc" size={"60px"} />;
       case "Javascript":
-        return <IoLogoJavascript color="yellow" size={"60px"} />;
+        return <IoLogoJavascript color="#f7df1e" size={"60px"} />;
       case "Java":
-        return <FaJava color="blue" size={"60px"} />;
+        return <FaJava color="#f89820" size={"60px"} />;
+      case "Kotlin":
+        return <TbBrandKotlin color="#B125EA" size={"60px"} />;
+      case "Spring":
+        return <SiSpring color="#9BCF53" size={"60px"} />;
+      case "Microservicios":
+        return <GrServices color="#344955" size={"60px"} />;
+      case "Servicios en la nube":
+        return <BsCloudCheckFill color="#40A2E3" size={"60px"} />;
+      case "SQL":
+        return <FaDatabase color="#1B3C73" size={"60px"} />;
       case "Android":
-        return <FcAndroidOs size={"60px"} />;
+        return <ImAndroid color="#3DDC84" size={"60px"} />;
+      case "API":
+        return <VscGear color="#176B87" size={"60px"} />;
+      case "Jetpack compose":
+        return <SiJetpackcompose color="#070F2B" size={"60px"} />;
       // Add more icons
       default:
         return null;
@@ -56,15 +87,24 @@ const SkillItem: React.FC<SkillItemUI> = ({ name, image }) => {
 
 const Skills: React.FC<SkillsProps> = ({ title }) => {
   const skillsMock: Skill[] = [
-    { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
-    { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
-    { type: "Frontend", image: "", name: "Javascript", knowledgeMeasure: 1 },
+    { type: "Frontend", image: "", name: "React", knowledgeMeasure: 1 },
+    { type: "Frontend", image: "", name: "Angular", knowledgeMeasure: 1 },
+    { type: "Frontend", image: "", name: "Vue", knowledgeMeasure: 1 },
+    { type: "Frontend", image: "", name: "Typescript", knowledgeMeasure: 1 },
     { type: "Backend", image: "", name: "Java", knowledgeMeasure: 1 },
-    { type: "Backend", image: "", name: "Java", knowledgeMeasure: 1 },
-    { type: "Backend", image: "", name: "Java", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "Kotlin", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "Spring", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "Microservicios", knowledgeMeasure: 1 },
+    { type: "Backend", image: "", name: "SQL", knowledgeMeasure: 1 },
+    {
+      type: "Backend",
+      image: "",
+      name: "Servicios en la nube",
+      knowledgeMeasure: 1,
+    },
     { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
-    { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
-    { type: "Mobile", image: "", name: "Android", knowledgeMeasure: 1 },
+    { type: "Mobile", image: "", name: "API", knowledgeMeasure: 1 },
+    { type: "Mobile", image: "", name: "Jetpack compose", knowledgeMeasure: 1 },
   ];
 
   // const [title, setTitle] = useState("Skills");

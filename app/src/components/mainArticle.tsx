@@ -41,8 +41,8 @@ const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
             <Image
               borderRadius="full"
               boxSize="200px"
-              src="https://bit.ly/dan-abramov"
-              alt="Dan Abramov"
+              src="/images/profile_01.jpg"
+              alt="Personal image"
             />
           </VStack>
         </Center>
@@ -58,8 +58,8 @@ const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
             <Image
               borderRadius="full"
               boxSize="300px"
-              src="https://bit.ly/dan-abramov"
-              alt="Dan Abramov"
+              src="/images/profile_01.jpg"
+              alt="Personal image"
             />
           </HStack>
         </Center>

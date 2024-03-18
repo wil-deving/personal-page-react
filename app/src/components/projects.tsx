@@ -21,12 +21,19 @@ import {
   Show,
   WrapItem,
   Wrap,
+  Box,
 } from "@chakra-ui/react";
 
 import { PhoneIcon, AddIcon, WarningIcon, EmailIcon } from "@chakra-ui/icons";
 import { Icon } from "@chakra-ui/react";
 import { SiKotlin } from "react-icons/si";
 import { FaAndroid } from "react-icons/fa";
+import { FaAngular } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
+import { SiSpring } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaPhp } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
 
 import React, { useState } from "react";
@@ -83,7 +90,7 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
             <Text marginTop={3} marginBottom={3}>
               {description}
             </Text>
-            <HStack spacing={4}>
+            <Box>
               {tags.map((tag, index) => (
                 <Tag
                   key={index}
@@ -91,6 +98,7 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
                   borderRadius="full"
                   variant="solid"
                   colorScheme={tag.color}
+                  margin={1}
                 >
                   {tag.name === "Kotlin" ? (
                     <TagLeftIcon boxSize="18px" as={SiKotlin} />
@@ -98,11 +106,29 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
                   {tag.name === "Android" ? (
                     <TagLeftIcon boxSize="18px" as={FaAndroid} />
                   ) : null}
+                  {tag.name === "Angular" ? (
+                    <TagLeftIcon boxSize="18px" as={FaAngular} />
+                  ) : null}
+                  {tag.name === "Java" ? (
+                    <TagLeftIcon boxSize="18px" as={FaJava} />
+                  ) : null}
+                  {tag.name === "Spring" ? (
+                    <TagLeftIcon boxSize="18px" as={SiSpring} />
+                  ) : null}
+                  {tag.name === "React" ? (
+                    <TagLeftIcon boxSize="18px" as={FaReact} />
+                  ) : null}
+                  {tag.name === "Javascript" ? (
+                    <TagLeftIcon boxSize="18px" as={IoLogoJavascript} />
+                  ) : null}
+                  {tag.name === "PHP" ? (
+                    <TagLeftIcon boxSize="18px" as={FaPhp} />
+                  ) : null}
 
                   <TagLabel>{tag.name}</TagLabel>
                 </Tag>
               ))}
-            </HStack>
+            </Box>
           </Stack>
         </CardBody>
         <CardFooter>
@@ -136,41 +162,64 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
 const Projects: React.FC<ProjectsProps> = ({ title }) => {
   const projectsMock: Project[] = [
     {
-      type: "Mobile",
-      image: "/images/mov_app.jpeg",
-      name: "My own vocabulary",
-      description: "This is an app to learn english",
-      repositoryUrl: "www.facebook.com",
+      type: "Frontend",
+      image: "/images/py_mi_chat_pdf.png",
+      name: "My Bot for PDF's",
+      description:
+        "Esta es una aplicación Web que permitirá hacerle consultas a un documento PDF en lenguaje humano, obteniendo una respuesta tambien en un lenguaje entendible para las personas.",
+      repositoryUrl: "https://github.com/wil-deving/ai-bs-hackaton-demo-ui",
       knowledgeMeasure: 1,
       tags: [
         {
-          name: "Kotlin",
+          name: "Angular",
+          color: "red",
+        },
+        {
+          name: "Java",
           color: "orange",
         },
         {
-          name: "Android",
+          name: "Spring",
           color: "green",
         },
       ],
     },
     {
-      type: "Mobile",
-      image: "/images/mov_app.jpeg",
-      name: "My own vocabulary",
-      description: "This is an app to learn english",
-      repositoryUrl: "www.facebook.com",
+      type: "Frontend",
+      image: "/images/py_ex_final_sistemas.png",
+      name: "App de Inmobiliaria",
+      description:
+        "Esta es una aplicación web para la gestión de un negocio inmobiliario, dode se pueden registrar bienes en oferta, compras, generar reportes y consultar los bienes disponibles mediante una aplicación Android.",
+      repositoryUrl: "https://github.com/wil-deving/frontend-ex-final",
       knowledgeMeasure: 1,
       tags: [
         {
-          name: "Kotlin",
-          color: "orange",
+          name: "React",
+          color: "blue",
+        },
+        {
+          name: "Javascript",
+          color: "yellow",
         },
         {
           name: "Android",
           color: "green",
         },
+        {
+          name: "PHP",
+          color: "blue",
+        },
+        {
+          name: "Java",
+          color: "orange",
+        },
+        {
+          name: "Spring",
+          color: "orange",
+        },
       ],
     },
+    /*
     {
       type: "Backend",
       image: "/images/mov_app.jpeg",
@@ -189,21 +238,23 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
         },
       ],
     },
+    */
     {
-      type: "Frontend",
-      image: "/images/mov_app.jpeg",
-      name: "React py",
-      description: "Front UI",
-      repositoryUrl: "https://github.com/wil-deving/dev-tools-api",
+      type: "Mobile",
+      image: "/images/py_mov_app.jpeg",
+      name: "My own vocabulary",
+      description:
+        "Esta es una aplicación móvil Android para incrementar el vocabulario en el idioma inglés, con esta herramienta tu podrás guardar los términos y palabras de este idioma que más utilices y practicarlos.",
+      repositoryUrl: "https://github.com/wil-deving/Word-Vault",
       knowledgeMeasure: 1,
       tags: [
         {
-          name: "Typescript",
-          color: "blue",
+          name: "Android",
+          color: "green",
         },
         {
-          name: "Javascript",
-          color: "yellow",
+          name: "Kotlin",
+          color: "orange",
         },
       ],
     },
@@ -228,6 +279,10 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
   const projectsByType = (type: String): Project[] =>
     projects.filter((project) => project.type === type);
 
+  const allProjects = projectsByType("Frontend")
+    .concat(projectsByType("Backend"))
+    .concat(projectsByType("Mobile"));
+
   return (
     <section>
       <Show below="sm">
@@ -240,15 +295,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
           {title}
         </Heading>
       </Show>
-      <Wrap justify="center">
-        {projectsByTypeList(projectsByType("Mobile"))}
-      </Wrap>
-
-      {/**
-           * <Center bg="white" p="4" color="white">
-        {projectsByTypeList(projectsByType("Mobile"))}
-      </Center>
-           */}
+      <Wrap justify="center">{projectsByTypeList(allProjects)}</Wrap>
     </section>
   );
 };
