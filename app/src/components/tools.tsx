@@ -1,5 +1,13 @@
 "use client";
-import { HStack, VStack, Heading, Center, Show, Box } from "@chakra-ui/react";
+import {
+  HStack,
+  VStack,
+  Heading,
+  Center,
+  Show,
+  Box,
+  Text,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import { SiVisualstudio } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa";
@@ -41,9 +49,12 @@ const ToolItem: React.FC<ToolItemUI> = ({ name, image }) => {
 
   return (
     <>
-      <Heading as="h6" size="sm">
-        {name}
-      </Heading>
+      <Show below="sm">
+        <Text fontSize="sm">{name}</Text>
+      </Show>
+      <Show above="md">
+        <Text fontSize="lg">{name}</Text>
+      </Show>
       {iconSkill()}
     </>
   );

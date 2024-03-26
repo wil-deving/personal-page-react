@@ -79,10 +79,18 @@ const ProjectItem: React.FC<ProjectItemProp> = ({
 }) => {
   return (
     <WrapItem>
-      <Card maxW="sm">
-        <CardHeader>
-          <Heading size="md">{name}</Heading>
-        </CardHeader>
+      <Card maxW="sm" background={"#F7F7F7"}>
+        <Show below="sm">
+          <CardHeader>
+            <Heading size="sm">{name}</Heading>
+          </CardHeader>
+        </Show>
+
+        <Show above="md">
+          <CardHeader>
+            <Heading size="md">{name}</Heading>
+          </CardHeader>
+        </Show>
 
         <CardBody>
           <Image src={image} alt={name} borderRadius="lg" />
@@ -295,7 +303,9 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
           {title}
         </Heading>
       </Show>
-      <Wrap justify="center">{projectsByTypeList(allProjects)}</Wrap>
+      <Wrap justify="center" marginBottom={10}>
+        {projectsByTypeList(allProjects)}
+      </Wrap>
     </section>
   );
 };

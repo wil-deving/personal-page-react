@@ -1,5 +1,14 @@
 "use client";
-import { Center, Stack, VStack, Text, Show, Box, Hide } from "@chakra-ui/react";
+import {
+  Center,
+  Stack,
+  VStack,
+  Text,
+  Show,
+  Box,
+  Hide,
+  Heading,
+} from "@chakra-ui/react";
 import React from "react";
 
 interface FooterProps {
@@ -18,8 +27,8 @@ const Footer: React.FC<FooterProps> = ({
   return (
     <footer>
       {/** Mobile View */}
-      <Show below="md">
-        <Center bg="#0F0F0F" p="4" color="#FFF">
+      <Show below="sm">
+        <Center bg="#2D4356" p="4" color="#FFF">
           <VStack>
             <Text fontSize="sm">{lastUpdateData}</Text>
             <Text fontSize="sm">{location}</Text>
@@ -30,12 +39,12 @@ const Footer: React.FC<FooterProps> = ({
       </Show>
 
       {/** Desktop View */}
-      <Show above="sm">
-        <Center bg="white" p="4" color="black">
+      <Show above="md">
+        <Center bg="white" p="16" color="black">
           <VStack>
-            <Text fontSize="lg">
+            <Heading as="h4" size="md">
               {lastUpdateData} | {location}
-            </Text>
+            </Heading>
             {phoneNumber ? <Text fontSize="lg">{phoneNumber}</Text> : null}
             {email ? <Text fontSize="lg">{email}</Text> : null}
           </VStack>

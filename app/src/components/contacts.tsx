@@ -21,6 +21,11 @@ interface Contact {
 const Contacts: React.FC = () => {
   const contacts: Contact[] = [
     {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/williams-gutierrez-chavez-2317a11a8/",
+      src: "/images/linkedin_logo.png",
+    },
+    {
       name: "Instagram",
       url: "https://www.instagram.com/wil_uh_ah94/?hl=es-la",
       src: "/images/instagram_logo.jpg",
@@ -30,11 +35,6 @@ const Contacts: React.FC = () => {
       url: "https://github.com/wil94",
       src: "/images/github_logo.png",
     },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/williams-gutierrez-chavez-2317a11a8/",
-      src: "/images/linkedin_logo.png",
-    },
   ];
 
   return (
@@ -43,7 +43,7 @@ const Contacts: React.FC = () => {
 
       {/** Mobile View */}
       <Show below="md">
-        <Center bg="white" p="4" color="white">
+        <Center bg="white" p="6" color="white">
           <HStack>
             {contacts.map((contact, index) => (
               <Link
@@ -68,7 +68,7 @@ const Contacts: React.FC = () => {
 
       {/** Desktop View */}
       <Show above="sm">
-        <Center bg="white" p="4" color="white">
+        <Center bg="white" p="12" color="white">
           <HStack>
             {contacts.map((contact, index) => (
               <Link

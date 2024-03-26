@@ -79,7 +79,12 @@ const SkillItem: React.FC<SkillItemUI> = ({ name, image }) => {
 
   return (
     <>
-      <Text fontSize="xl">{name}</Text>
+      <Show below="sm">
+        <Text fontSize="sm">{name}</Text>
+      </Show>
+      <Show above="md">
+        <Text fontSize="lg">{name}</Text>
+      </Show>
       {iconSkill()}
     </>
   );
@@ -141,13 +146,13 @@ const Skills: React.FC<SkillsProps> = ({ title }) => {
   return (
     <section>
       <Show below="sm">
-        <Heading marginLeft={2} marginBottom={2} as="h4" size="md">
+        <Heading marginLeft={2} marginBottom={6} as="h4" size="md">
           {title}
         </Heading>
       </Show>
       <Show above="md">
         <Center bg="white" p="4" color="black">
-          <Heading marginLeft={6} marginBottom={4} as="h3" size="lg">
+          <Heading marginLeft={6} marginBottom={12} as="h3" size="lg">
             {title}
           </Heading>
         </Center>
@@ -162,12 +167,12 @@ const Skills: React.FC<SkillsProps> = ({ title }) => {
       </Show>
       <Show above="md">
         <Center bg="white" p="4" color="black">
-          <Heading marginLeft={6} marginBottom={4} as="h4" size="md">
+          <Heading marginLeft={0} marginBottom={4} as="h4" size="md">
             Frontend
           </Heading>
         </Center>
       </Show>
-      <Box marginBottom={10}>
+      <Box marginBottom={12}>
         <Center bg="white" p="4" color="black">
           {skillsByTypeList(skillsByType("Frontend"))}
         </Center>
@@ -181,18 +186,18 @@ const Skills: React.FC<SkillsProps> = ({ title }) => {
       </Show>
       <Show above="md">
         <Center bg="white" p="4" color="black">
-          <Heading marginLeft={6} marginBottom={4} as="h4" size="md">
+          <Heading marginLeft={0} marginBottom={4} as="h4" size="md">
             Backend
           </Heading>
         </Center>
       </Show>
-      <Box marginBottom={10}>
+      <Box marginBottom={12}>
         <Center bg="white" p="4" color="black">
           {skillsByTypeList(skillsByType("Backend"))}
         </Center>
       </Box>
 
-      {/** Backend Skills */}
+      {/** Mobile Skills */}
       <Show below="sm">
         <Heading marginLeft={2} marginBottom={2} as="h5" size="sm">
           Mobile
@@ -200,12 +205,12 @@ const Skills: React.FC<SkillsProps> = ({ title }) => {
       </Show>
       <Show above="md">
         <Center bg="white" p="4" color="black">
-          <Heading marginLeft={6} marginBottom={4} as="h4" size="md">
+          <Heading marginLeft={0} marginBottom={4} as="h4" size="md">
             Mobile
           </Heading>
         </Center>
       </Show>
-      <Box marginBottom={10}>
+      <Box marginBottom={12}>
         <Center bg="white" p="4" color="black">
           {skillsByTypeList(skillsByType("Mobile"))}
         </Center>
