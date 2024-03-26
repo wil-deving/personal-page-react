@@ -1,15 +1,6 @@
 "use client";
 import { Link } from "@chakra-ui/next-js";
-import {
-  AbsoluteCenter,
-  Box,
-  Center,
-  HStack,
-  Image,
-  Show,
-  Stack,
-  VStack,
-} from "@chakra-ui/react";
+import { Center, HStack, Image, Show } from "@chakra-ui/react";
 import React from "react";
 
 interface Contact {

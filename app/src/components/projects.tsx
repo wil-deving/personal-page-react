@@ -1,40 +1,28 @@
 "use client";
 import {
+  Box,
   Button,
   ButtonGroup,
   Card,
   CardBody,
   CardFooter,
-  Center,
-  Divider,
-  HStack,
+  CardHeader,
   Heading,
   Image,
-  Link,
+  Show,
   Stack,
   Tag,
-  TagCloseButton,
   TagLabel,
   TagLeftIcon,
   Text,
-  CardHeader,
-  Show,
-  WrapItem,
   Wrap,
-  Box,
+  WrapItem,
 } from "@chakra-ui/react";
 
-import { PhoneIcon, AddIcon, WarningIcon, EmailIcon } from "@chakra-ui/icons";
-import { Icon } from "@chakra-ui/react";
-import { SiKotlin } from "react-icons/si";
-import { FaAndroid } from "react-icons/fa";
-import { FaAngular } from "react-icons/fa";
-import { FaJava } from "react-icons/fa";
-import { SiSpring } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-import { FaPhp } from "react-icons/fa";
 import { DiGithubBadge } from "react-icons/di";
+import { FaAndroid, FaAngular, FaJava, FaPhp, FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiKotlin, SiSpring } from "react-icons/si";
 
 import React, { useState } from "react";
 

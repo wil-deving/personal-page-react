@@ -1,18 +1,17 @@
 "use client";
 import {
-  HStack,
-  VStack,
-  Heading,
-  Center,
-  Show,
   Box,
+  Center,
+  HStack,
+  Heading,
+  Show,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { SiVisualstudio } from "react-icons/si";
-import { FaGitAlt } from "react-icons/fa";
-import { SiGithub } from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
+import { FaGitAlt } from "react-icons/fa";
+import { SiGithub, SiVisualstudio } from "react-icons/si";
 
 interface ToolsProps {
   title: string;

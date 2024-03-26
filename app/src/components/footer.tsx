@@ -1,14 +1,5 @@
 "use client";
-import {
-  Center,
-  Stack,
-  VStack,
-  Text,
-  Show,
-  Box,
-  Hide,
-  Heading,
-} from "@chakra-ui/react";
+import { Center, Heading, Show, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 interface FooterProps {

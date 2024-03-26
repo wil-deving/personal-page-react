@@ -1,19 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  AbsoluteCenter,
-  Box,
-  Center,
-  HStack,
-  Heading,
-  Hide,
-  Image,
-  Show,
-  Stack,
-  VStack,
-  Text,
-} from "@chakra-ui/react";
+import { Center, HStack, Heading, Image, Show, VStack } from "@chakra-ui/react";
+import React from "react";
 
 interface MainArticleProps {
   greeting: string;

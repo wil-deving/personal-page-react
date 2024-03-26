@@ -1,27 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 
-import {
-  Button,
-  ButtonGroup,
-  Card,
-  CardBody,
-  CardFooter,
-  Center,
-  Divider,
-  HStack,
-  Heading,
-  Image,
-  Link,
-  Stack,
-  Tag,
-  TagCloseButton,
-  TagLabel,
-  TagLeftIcon,
-  Text,
-  CardHeader,
-  Show,
-} from "@chakra-ui/react";
+import { Heading, Show, Text } from "@chakra-ui/react";
 
 interface AboutProps {
   title: String;

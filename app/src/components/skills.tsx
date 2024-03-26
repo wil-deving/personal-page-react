@@ -5,23 +5,23 @@ import {
   HStack,
   Heading,
   Show,
-  VStack,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { IoLogoJavascript } from "react-icons/io5";
-import { FaReact } from "react-icons/fa";
-import { PiAngularLogo } from "react-icons/pi";
-import { SiVuedotjs } from "react-icons/si";
-import { SiTypescript } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { TbBrandKotlin } from "react-icons/tb";
-import { SiSpring } from "react-icons/si";
-import { GrServices } from "react-icons/gr";
-import { FaDatabase } from "react-icons/fa";
-import { ImAndroid } from "react-icons/im";
-import { SiJetpackcompose } from "react-icons/si";
 import { BsCloudCheckFill } from "react-icons/bs";
+import { FaDatabase, FaJava, FaReact } from "react-icons/fa";
+import { GrServices } from "react-icons/gr";
+import { ImAndroid } from "react-icons/im";
+import { IoLogoJavascript } from "react-icons/io5";
+import { PiAngularLogo } from "react-icons/pi";
+import {
+  SiJetpackcompose,
+  SiSpring,
+  SiTypescript,
+  SiVuedotjs,
+} from "react-icons/si";
+import { TbBrandKotlin } from "react-icons/tb";
 import { VscGear } from "react-icons/vsc";
 
 interface SkillsProps {

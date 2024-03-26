@@ -1,34 +1,12 @@
 // app/page.tsx
 "use client";
-import { Link } from "@chakra-ui/next-js";
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Hide,
-  Show,
-  Text,
-  Flex,
-  Spacer,
-  CardBody,
-  Stack,
-  Heading,
-  Image,
-  Card,
-  Divider,
-  CardFooter,
-  Wrap,
-  Center,
-  WrapItem,
-} from "@chakra-ui/react";
-import MainArticle from "./src/components/mainArticle";
 import About from "./src/components/about";
-import Projects from "./src/components/projects";
-import Skills from "./src/components/skills";
-import SoftSkills from "./src/components/softSkills";
-import Tools from "./src/components/tools";
 import Contacts from "./src/components/contacts";
 import Footer from "./src/components/footer";
+import MainArticle from "./src/components/mainArticle";
+import Projects from "./src/components/projects";
+import Skills from "./src/components/skills";
+import Tools from "./src/components/tools";
 import ViewData from "./src/configurations/viewData.json";
 
 export default function Page() {
