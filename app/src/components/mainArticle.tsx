@@ -38,7 +38,15 @@ const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
 
       {/** Desktop View */}
       <Show above="md">
-        <Center bg="#2D4356" p="16" color="white">
+        <Center
+          p="16"
+          color="white"
+          style={{
+            backgroundImage: `url('/images/background_image_3.jpeg')`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
           <HStack>
             <VStack>
               <Heading as="h2" size="xl" marginRight={12}>

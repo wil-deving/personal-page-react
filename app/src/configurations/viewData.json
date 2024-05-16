@@ -4,7 +4,12 @@
   },
   "about": {
     "title": "Sobre Mi",
-    "description": "Me llamo Williams Gutierrez, tengo 26 años, estudié la carrera de ingeniería de sistemas, trabajo en la parte Frontend y Backend en el desarrollo de aplicaciones web. También desarrollando aplicaciones nativas en Android. Me apasiona poder crear y desarrollar soluciones de software, ya que siempre se enfrentan nuevos retos pero así tambien nacen nuevas soluciones. Este mundo está en constante cambio, y la tecnología es una de las principales causas del mismo; por ello creo que es importante compartir el conocimiento, para que con el cambio venga también el crecimiento, por eso admiro mucho a las personas que comparten lo que saben."
+    "description": [
+      "Me llamo Williams Gutierrez y soy de Bolivia; soy ingeniero de sistemas y cuento con más de cinco años de experiencia como desarrollador fullstack en aplicaciones web y móviles.",
+      "A lo largo de este tiempo he podido colaborar con personas muy talentosas y aprender mucho de ellas desarrollando e innovando con soluciones eficientes para la educación, startups de Latinoamérica y actualmente en banca y seguros.",
+      "Me apasiona poder desarrollar software donde exista una cultura para compartir el conocimiento y la creatividad pueda fluir creando nuevas soluciones en tecnología para este mundo de constante cambio.",
+      "Además, actualmente estoy ampliando mis conocimientos y habilidades en el campo de la ciberseguridad mediante una especialización, reconociendo la importancia de proteger la información y los sistemas en un mundo digital cada vez más interconectado."
+    ]
   },
   "projects": {
     "title": "Proyectos que hice"
