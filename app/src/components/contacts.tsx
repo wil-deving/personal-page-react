@@ -14,17 +14,17 @@ const Contacts: React.FC = () => {
     {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/williams-gutierrez-chavez-2317a11a8/",
-      src: "/images/linkedin_logo.png",
+      src: "./images/linkedin_logo.png", // src: "/images/linkedin_logo.png", to deploy locally
     },
     {
       name: "Instagram",
       url: "https://www.instagram.com/wil_uh_ah94/?hl=es-la",
-      src: "/images/instagram_logo.jpg",
+      src: "./images/instagram_logo.jpg",
     },
     {
       name: "GitHub",
       url: "https://github.com/wil94",
-      src: "/images/github_logo.png",
+      src: "./images/github_logo.png",
     },
   ];
 

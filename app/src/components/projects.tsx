@@ -159,7 +159,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
   const projectsMock: Project[] = [
     {
       type: "Frontend",
-      image: "/images/py_mi_chat_pdf.png",
+      image: "./images/py_mi_chat_pdf.png",
       name: "My Bot for PDF's",
       description:
         "Esta es una aplicación Web que permitirá hacerle consultas a un documento PDF en lenguaje humano, obteniendo una respuesta tambien en un lenguaje entendible para las personas.",
@@ -182,7 +182,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
     },
     {
       type: "Frontend",
-      image: "/images/py_ex_final_sistemas.png",
+      image: "./images/py_ex_final_sistemas.png",
       name: "App de Inmobiliaria",
       description:
         "Esta es una aplicación web para la gestión de un negocio inmobiliario, dode se pueden registrar bienes en oferta, compras, generar reportes y consultar los bienes disponibles mediante una aplicación Android.",
@@ -237,7 +237,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
     */
     {
       type: "Mobile",
-      image: "/images/py_mov_app.jpeg",
+      image: "./images/py_mov_app.jpeg",
       name: "My own vocabulary",
       description:
         "Esta es una aplicación móvil Android para incrementar el vocabulario en el idioma inglés, con esta herramienta tu podrás guardar los términos y palabras de este idioma que más utilices y practicarlos.",

@@ -29,7 +29,7 @@ const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
             <Image
               borderRadius="full"
               boxSize="200px"
-              src="/images/profile_01.jpg"
+              src="./images/profile_01.jpg"
               alt="Personal image"
             />
           </VStack>
@@ -42,7 +42,7 @@ const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
           p="16"
           color="white"
           style={{
-            backgroundImage: `url('/images/background_image_3.jpeg')`,
+            backgroundImage: `url('./images/background_image_3.jpeg')`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
@@ -60,7 +60,7 @@ const MainArticle: React.FC<MainArticleProps> = ({ greeting }) => {
             <Image
               borderRadius="full"
               boxSize="300px"
-              src="/images/profile_01.jpg"
+              src="./images/profile_01.jpg"
               alt="Personal image"
             />
           </HStack>
