@@ -54,7 +54,7 @@ The built porject is running on repository [Github page].(https://github.com/wil
 
 **Branch: gh-pages**
 
-Link to repostory [Github repository].([https://github.com/wil-deving/about-me](https://github.com/wil-deving/personal-page-react))
+Link to repostory [Github repository].(https://github.com/wil-deving/personal-page-react)
 
 
 ## Learn More
