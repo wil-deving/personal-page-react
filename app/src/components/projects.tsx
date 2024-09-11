@@ -162,7 +162,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
       image: "./images/py_mi_chat_pdf.png",
       name: "My Bot for PDF's",
       description:
-        "Esta es una aplicación Web que permitirá hacerle consultas a un documento PDF en lenguaje humano, obteniendo una respuesta tambien en un lenguaje entendible para las personas.",
+        "Esta es una aplicación web que permite cargar un documento PDF para poder realizar consultas sobre el contenido del mismo en un lenguaje humano, obteniendo una respuesta en un lenguaje entendible para las personas con la ubicación del texto consultado dentro del documento.",
       repositoryUrl: "https://github.com/wil-deving/ai-bs-hackaton-demo-ui",
       knowledgeMeasure: 1,
       tags: [
@@ -185,7 +185,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
       image: "./images/py_ex_final_sistemas.png",
       name: "App de Inmobiliaria",
       description:
-        "Esta es una aplicación web para la gestión de un negocio inmobiliario, dode se pueden registrar bienes en oferta, compras, generar reportes y consultar los bienes disponibles mediante una aplicación Android.",
+        "Esta es una aplicación web para la gestión de un negocio inmobiliario, en el cual se puede registrar bienes en oferta, compra de bienes, generar reportes y proporciona servicios API para poder consultar los bienes disponibles y sus características mediante una aplicación Android.",
       repositoryUrl: "https://github.com/wil-deving/frontend-ex-final",
       knowledgeMeasure: 1,
       tags: [
@@ -240,7 +240,7 @@ const Projects: React.FC<ProjectsProps> = ({ title }) => {
       image: "./images/py_mov_app.jpeg",
       name: "My own vocabulary",
       description:
-        "Esta es una aplicación móvil Android para incrementar el vocabulario en el idioma inglés, con esta herramienta tu podrás guardar los términos y palabras de este idioma que más utilices y practicarlos.",
+        "Esta es una aplicación móvil Android para incrementar tu vocabulario en el idioma inglés, con esta herramienta tu podrás guardar los términos y palabras que más utilices en tu vocabulario; una vez guardados, construyendo de esta manera tu propio vocabulario para poder practicarlo.",
       repositoryUrl: "https://github.com/wil-deving/Word-Vault",
       knowledgeMeasure: 1,
       tags: [
