@@ -47,7 +47,7 @@ So, it will generate "out" folder
 
 - Enter to out folder
 - Copy _next contains to a new folder called **logic**
-- Edit **index.html** and replace **_next** string for **logic** string and save
+- Edit **index.html** and replace **/_next/** string for **/logic/** string and save
 - Upload all files and folders into **out** folder on github pages repository
 
 The built porject is running on repository [Github page].(https://github.com/wil-deving/about-me)
