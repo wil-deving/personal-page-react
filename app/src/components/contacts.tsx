@@ -23,7 +23,7 @@ const Contacts: React.FC = () => {
     },
     {
       name: "GitHub",
-      url: "https://github.com/wil94",
+      url: "https://github.com/wil-deving/",
       src: "./images/github_logo.png",
     },
   ];
